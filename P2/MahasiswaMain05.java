@@ -17,5 +17,9 @@ public class MahasiswaMain05 {
         Mahasiswa05 mhs2 = new Mahasiswa05("Annisa Nabila","2141720160",3.25,"TI 2L");
         mhs2.updateIpk(3.30);
         mhs2.tampilkanInformasi();
+
+        Mahasiswa05 mhsFafirru = new Mahasiswa05("Fafirru Hadzami Sycah Mashuri","254107020104",3.60,"TI 1E");
+        mhsFafirru.updateIpk(4.00);
+        mhsFafirru.tampilkanInformasi();
     }
 }
