@@ -7,7 +7,7 @@ public class Dosen05Main {
         dsn1.nama           = "Budi Santoso";
         dsn1.statusAktif    = true;
         dsn1.tahunBergabung = 2010;
-        dsn1.bidangKeahlian = "Jaringan Komputer";
+        dsn1.bidangKeahlian = "Algoritma dan Struktur Data";
 
         System.out.println("Data Dosen 1");
         dsn1.tampilInformasi();
@@ -19,12 +19,12 @@ public class Dosen05Main {
         dsn1.hitungMasaKerja(2026);
 
         System.out.println("\nMengubah Bidang Keahlian");
-        dsn1.ubahKeahlian("Keamanan Jaringan");
+        dsn1.ubahKeahlian("Basis Data");
 
         System.out.println("\nData Dosen 1 Setelah Diubah");
         dsn1.tampilInformasi();
 
-        Dosen05 dsn2 = new Dosen05("D002", "Siti Rahayu", true, 2015, "Kecerdasan Buatan");
+        Dosen05 dsn2 = new Dosen05("STR", "Siti Rahayu", true, 2015, "Matematika");
 
         System.out.println("\nData Dosen 2");
         dsn2.tampilInformasi();
