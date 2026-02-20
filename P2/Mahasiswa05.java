@@ -12,7 +12,7 @@ public class Mahasiswa05 {
         System.out.println("IPK   : "+ipk);
         System.out.println("Kelas : "+kelas);
     }
-    void ubahKelas(){
+    void ubahKelas(String kelasBaru){
         kelas = kelasBaru;   
     }
     void updateIpk(double ipkBaru) {
