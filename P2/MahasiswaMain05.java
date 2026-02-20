@@ -13,6 +13,7 @@ public class MahasiswaMain05 {
         mhs1.ubahKelas("SI 2K");
         mhs1.updateIpk(3.60);
         mhs1.tampilkanInformasi();
+        System.out.println(mhs1.nilaiKinerja());
 
         Mahasiswa05 mhs2 = new Mahasiswa05("Annisa Nabila","2141720160",3.25,"TI 2L");
         mhs2.updateIpk(3.30);
@@ -21,5 +22,6 @@ public class MahasiswaMain05 {
         Mahasiswa05 mhsFafirru = new Mahasiswa05("Fafirru Hadzami Sycah Mashuri","254107020104",3.60,"TI 1E");
         mhsFafirru.updateIpk(4.00);
         mhsFafirru.tampilkanInformasi();
+        System.out.println(mhsFafirru.nilaiKinerja());
     }
 }
