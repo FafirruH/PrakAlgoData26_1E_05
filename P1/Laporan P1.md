@@ -48,33 +48,22 @@ Hasil running program percobaan 2.2
 
 
 ## Percobaan 2.3: Praktikum Array
+Hasil running program percobaan 2.3
+
+<img width="380" height="509" alt="Screenshot 2026-02-18 145625" src="https://github.com/user-attachments/assets/b2b92296-28a4-4406-bb22-b480aa2f6d5b" />
+<img width="516" height="515" alt="Screenshot 2026-02-18 145634" src="https://github.com/user-attachments/assets/6c23c3b7-0bf6-4abb-82f3-d51eea26cdd7" />
+
+
 
 ### Pertanyaan Percobaan 2.3
-1. Apa yang terjadi jika mahasiswa menjawab "No" pada pertanyaan bebas kompen? Mengapa demikian? 
-2. Jelaskan maksud dari potongan kode berikut! 
-if (bimbinganP1 >= 8 && bimbinganP2 >= 4) {
-3. Bagaimana alur pemeriksaan syarat mahasiswa dari awal sampai akhir? Jelaskan secara runtut untuk semua kondisi! 
+<img width="455" height="580" alt="Screenshot 2026-02-18 150515" src="https://github.com/user-attachments/assets/83a0e388-fd5b-4b56-bf71-e2597ee05ceb" />
+
 
 ### Jawaban Percobaan 2.3
-1. Jika mahasiswa menjawab "No", maka program akan langsung mengeksekusi blok else yang berisi pesan = "Gagal! Mahasiswa masih memiliki tanggungan kompen". Karena syarat bebas kompen adalah syarat utama atau pertama yang harus dipenuhi. Kalau sudah gagal di awal, maka pemeriksaan log bimbingan menjadi tidak relevan lagi.
-2. Potongan kode ini digunakan untuk memeriksa apakah mahasiswa telah memenuhi syarat log bimbingan, yaitu:
-Log bimbingan Pembimbing 1 harus minimal 8 kali
-Log bimbingan Pembimbing 2 harus minimal 4 kali
-Jika kedua syarat ini terpenuhi, maka mahasiswa dianggap telah memenuhi syarat log bimbingan dan boleh mendaftar ujian skripsi.
-3. Berikut alur pemeriksaan syarat mahasiswa dari awal sampai akhir:
-    1. Mahasiswa ditanya: Apakah sudah bebas kompen?
-    2. Jika jawabannya "Ya" (tidak case sensitive, karena pakai equalsIgnoreCase("Ya")):
-    3. Maka lanjut ke pemeriksaan log bimbingan:
-    Jika bimbinganP1 >= 8 dan bimbinganP2 >= 4 →
-    Output: "Semua syarat terpenuhi. Mahasiswa boleh mendaftar ujian skripsi"
-    4. Jika bimbinganP1 < 8 dan bimbinganP2 < 4 →
-    Output: "Gagal! Log bimbingan P1 kurang dari 8 kali dan P2 kurang dari 4 kali"
-    5. Jika bimbinganP1 < 8 saja →
-    Output: "Gagal! Log bimbingan P1 belum mencapai 8 kali"
-    6. Jika bimbinganP2 < 4 saja →
-    Output: "Gagal! Log bimbingan P2 belum mencapai 4 kali"
-    7. Jika jawabannya selain "Ya" (misalnya: "No", "Tidak", dll):
-    Maka langsung keluar pesan: "Gagal! Mahasiswa masih memiliki tanggungan kompen."
+1. Hasil running program menghitung IP semester
+
+<img width="380" height="509" alt="Screenshot 2026-02-18 145625" src="https://github.com/user-attachments/assets/b2b92296-28a4-4406-bb22-b480aa2f6d5b" />
+<img width="516" height="515" alt="Screenshot 2026-02-18 145634" src="https://github.com/user-attachments/assets/6c23c3b7-0bf6-4abb-82f3-d51eea26cdd7" />
 
 ## Percobaan 2.4: Praktikum Fungsi
 Hasil running program percobaan 2.4
@@ -109,6 +98,28 @@ Buatkan fungsi untuk :
 1. Menginput data jadwal kuliah ke dalam array 2 dimensi
 2. Menampilkan seluruh jadwal kuliah dalam bentuk tabel
 3. Menampilkan jadwal kuliah berdasarkan hari tertentu
-4. Menampilkan jadwal kuliah berdasarkan nama mata kuliah tertentu 
-- Berikut implementasi flowchart soal nomor dua:
-  <img width="861" height="933" alt="Screenshot 2025-10-10 135651" src="https://github.com/user-attachments/assets/04040e70-07d8-4d42-b233-0ce874ff89b8" />
+4. Menampilkan jadwal kuliah berdasarkan nama mata kuliah tertentu
+   
+### Jawaban Tugas 2:
+1. Fungsi untuk menginputkan jadwal kuliah
+  <img width="476" height="366" alt="Screenshot 2026-02-18 082231" src="https://github.com/user-attachments/assets/15628222-84d3-4163-815b-0d0b9d571546" />
+  
+2. Fungsi untuk menampilkan seluruh jadwal
+<img width="1047" height="185" alt="Screenshot 2026-02-18 082512" src="https://github.com/user-attachments/assets/aa4a3858-378c-4853-928b-872ff73a1da1" />
+
+3. Fungsi untuk menampilkan jadwal kuliah berdasarkan hari tertentu
+<img width="1130" height="300" alt="Screenshot 2026-02-18 082531" src="https://github.com/user-attachments/assets/2eb91721-be9d-4d31-84cc-c0925353061d" />
+
+4. Fungsi untuk menampilkan seluruh jadwal kuliah berdasarkan mata kuliah tertentu
+<img width="1097" height="336" alt="Screenshot 2026-02-18 143801" src="https://github.com/user-attachments/assets/672687e3-3049-4765-b6f2-d241c95d443c" />
+
+
+Hasil running program tugas 2
+
+<img width="316" height="463" alt="Screenshot 2026-02-18 143936" src="https://github.com/user-attachments/assets/5fe13d99-8a2e-49ec-bc5d-a14ee3fb5a05" />
+<img width="590" height="466" alt="Screenshot 2026-02-18 144037" src="https://github.com/user-attachments/assets/11b84d8b-c7fa-40b2-af4f-97a79ff6faef" />
+<img width="528" height="262" alt="Screenshot 2026-02-18 144348" src="https://github.com/user-attachments/assets/12e17519-360a-431d-a636-9b41ebf55924" />
+
+
+
+
