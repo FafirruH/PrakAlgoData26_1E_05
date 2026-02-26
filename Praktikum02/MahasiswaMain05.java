@@ -1,4 +1,4 @@
-package P2;
+package Praktikum02;
 
 public class MahasiswaMain05 {
     public static void main(String[] args) {

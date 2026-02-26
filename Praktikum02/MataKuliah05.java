@@ -1,4 +1,4 @@
-package P2;
+package Praktikum02;
 
 public class MataKuliah05 {
     String kodeMK;
