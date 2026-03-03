@@ -45,5 +45,18 @@
 <img width="494" height="767" alt="image" src="https://github.com/user-attachments/assets/bd4ed2b9-c268-457c-a144-3724cb8cac41" />
 
 ## Tugas
+1.
+<img width="935" height="589" alt="image" src="https://github.com/user-attachments/assets/c9bd2920-1b0d-42a0-83ba-900eda029406" />
 
+<img width="751" height="833" alt="image" src="https://github.com/user-attachments/assets/466db16c-22e5-437a-bac0-3e188e1a9eba" />
 
+<img width="425" height="703" alt="image" src="https://github.com/user-attachments/assets/fc9e4971-2131-4f81-b44f-e0b96a2711d3" />
+
+2.
+<img width="702" height="952" alt="image" src="https://github.com/user-attachments/assets/5b103ffc-9550-4d05-b74d-4295189a0244" />
+
+<img width="621" height="527" alt="image" src="https://github.com/user-attachments/assets/caa561d7-df29-4fff-9fd2-03494d8a2f70" />
+
+<img width="405" height="882" alt="image" src="https://github.com/user-attachments/assets/377a545b-63a7-4a06-8f2b-e7f4d2d9e28b" />
+
+<img width="279" height="343" alt="image" src="https://github.com/user-attachments/assets/24fef977-29d4-46d2-b284-f82f1de25a07" />
