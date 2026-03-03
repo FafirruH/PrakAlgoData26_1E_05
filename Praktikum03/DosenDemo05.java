@@ -34,6 +34,13 @@ public class DosenDemo05 {
         for (Dosen05 d : arrayOfDosen) {
             d.cetakInfo();
         }
+        DataDosen05 data = new DataDosen05();
+
+        data.dataSemuaDosen(arrayOfDosen);
+        data.jumlahDosenPerJenisKelamin(arrayOfDosen);
+        data.rerataUsiaDosenPerJenisKelamin(arrayOfDosen);
+        data.infoDosenPalingTua(arrayOfDosen);
+        data.infoDosenPalingMuda(arrayOfDosen);
 
         sc.close();
     }
