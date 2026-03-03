@@ -21,13 +21,8 @@ public class MahasiswaDemo05 {
             arrayofMahasiswa05[i].ipk= Float.parseFloat(dummy);
             System.out.println("----------------------------");
         }
-
-        for (int i = 0; i <3; i++) {
-            System.out.println("NIM     : "+arrayofMahasiswa05[i].nim);
-            System.out.println("Nama    : "+arrayofMahasiswa05[i].nama);
-            System.out.println("Kelas   : "+arrayofMahasiswa05[i].kelas);
-            System.out.println("IPK     : "+arrayofMahasiswa05[i].ipk);
-            System.out.println("-----------------------------------");
+        for (int i = 0; i < arrayofMahasiswa05.length; i++) {
+            arrayofMahasiswa05[i].cetakInfo();
         }
         sc.close();
     }
