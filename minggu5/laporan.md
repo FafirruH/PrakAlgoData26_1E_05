@@ -48,3 +48,12 @@ Program akan menghitung:
 3. Penjumlahan lsum dan rsum diperlukan untuk menggabungkan hasil perhitungan dari dua bagian array yang telah dibagi pada metode Divide and Conquer. lsum merupakan jumlah dari bagian kiri array, sedangkan rsum merupakan jumlah dari bagian kanan array. Dengan menjumlahkan keduanya, diperoleh total keseluruhan nilai dalam array.
 4. Base case dari method TotalDC() adalah kondisi ketika indeks kiri sama dengan indeks kanan (l == r). Pada kondisi ini berarti hanya terdapat satu elemen array yang diproses, sehingga method langsung mengembalikan nilai elemen tersebut tanpa melakukan pembagian lagi. Kondisi ini digunakan untuk menghentikan proses rekursi.
 5. Method totalDC() bekerja dengan menggunakan metode Divide and Conquer, yaitu dengan membagi array menjadi dua bagian yang lebih kecil secara rekursif hingga mencapai base case (satu elemen). Setelah itu, hasil dari bagian kiri dan kanan dijumlahkan kembali sehingga diperoleh total seluruh elemen dalam array.
+
+
+### Tugas
+
+<img width="813" height="363" alt="image" src="https://github.com/user-attachments/assets/9a21e634-aa10-47f8-857f-c8535fb20b13" />
+
+<img width="986" height="977" alt="image" src="https://github.com/user-attachments/assets/71a62fea-359c-4174-b49f-349072edb494" />
+
+<img width="416" height="108" alt="image" src="https://github.com/user-attachments/assets/e527fe72-4a00-4efa-b5b9-ad9a1843824d" />
