@@ -16,5 +16,12 @@ public class SortingMain05 {
         dataurut2.SelectionSort();
         System.out.println("Data sudah di urutkan dengan SELECTION SORT");
         dataurut2.tampil();
+        int c[]={40,10,4,9,3};
+        Sorting05 dataurut3 = new Sorting05(c, c.length);
+        System.out.println("Data awal 3");
+        dataurut3.tampil();
+        dataurut3.InsertionSort();
+        System.out.println("Data sudah diurutkan dengan INSERTION SORT (ASC)");
+        dataurut3.tampil();
     }
 }
