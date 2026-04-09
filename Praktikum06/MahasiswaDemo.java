@@ -6,7 +6,9 @@ public class MahasiswaDemo {
     public static void main(String[] args) {
         MahasiswaBerprestasi list = new MahasiswaBerprestasi();
         Scanner sc = new Scanner(System.in);
-        int jumMhs = 5;
+        System.out.print("Masukkan jumlah mahasiswa yang akan diinput: ");
+        int jumMhs = sc.nextInt();
+        sc.nextLine();
 
         for (int i = 0; i < jumMhs; i++) {
             System.out.println("Masukkan Data Mahasiswa ke-" + (i + 1));
@@ -35,6 +37,21 @@ public class MahasiswaDemo {
         int pss = (int) posisi;
         list.tampilPosisi(cariSeq, pss);
         list.tampilDataSearch(cariSeq, pss);
+
+        System.out.println("----------------------------------------");
+        System.out.println("Pencarian data");
+        System.out.println("----------------------------------------");
+        System.out.println("masukkan ipk mahasiswa yang dicari: ");
+        System.out.print("IPK: ");
+        double cari=sc.nextDouble();
+        System.out.println("----------------------------------------");
+        System.out.println("Menggunakan BInary Search");
+        System.out.println("----------------------------------------");
+        double posisi2= list.findBinarySearch(cari, 0, jumMhs-1);
+        int pss2=(int)posisi2;
+        list.tampilPosisi(cari, pss2);
+        list.tampilDataSearch(cari, pss2);
+
         sc.close();
     }
 }
