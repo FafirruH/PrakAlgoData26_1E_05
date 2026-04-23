@@ -1,7 +1,5 @@
 package Praktikum06;
 
-import CM1.Mahasiswa05;
-
 public class MahasiswaBerprestasi {
     Mahasiswa[] listMhs = new Mahasiswa[5];
     int idx;

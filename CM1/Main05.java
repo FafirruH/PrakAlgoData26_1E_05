@@ -3,22 +3,22 @@ package CM1;
 import java.util.Scanner;
 
 public class Main05 {
-    //declare scanner untuk input
+    // declare scanner untuk input
     static Scanner input = new Scanner(System.in);
-    //hardcode data mahasiswa
+    // hardcode data mahasiswa
     static Mahasiswa05[] mhs = {
             new Mahasiswa05("22001", "Andi", "Teknik Informatika"),
             new Mahasiswa05("22002", "Budi", "Teknik Informatika"),
             new Mahasiswa05("22003", "Citra", "Sistem Informasi Bisnis")
     };
-    //hardcode data buku
+    // hardcode data buku
     static Buku05[] buku = {
-            new Buku05("B001", "Algoritma", 2020),
-            new Buku05("B002", "Basis Data", 2019),
-            new Buku05("B003", "Pemrograman", 2021),
-            new Buku05("B004", "Fisika", 2024)
+            new Buku05("B001", "Algoritma", 2020, "A"),
+            new Buku05("B002", "Basis Data", 2019, "B"),
+            new Buku05("B003", "Pemrograman", 2021, "A"),
+            new Buku05("B004", "Fisika", 2024, "B")
     };
-    //hardcode data peminjaman
+    // hardcode data peminjaman
     static Peminjaman05[] pinjam = {
             new Peminjaman05(mhs[0], buku[0], 7),
             new Peminjaman05(mhs[1], buku[1], 3),
@@ -26,7 +26,8 @@ public class Main05 {
             new Peminjaman05(mhs[2], buku[3], 6),
             new Peminjaman05(mhs[0], buku[1], 4)
     };
-    //fungsi main
+
+    // fungsi main
     public static void main(String[] args) {
         int pilih;
         do {
@@ -45,7 +46,8 @@ public class Main05 {
 
         } while (pilih != 0);
     }
-    //fungsi menu
+
+    // fungsi menu
     static void menu() {
         System.out.println("\n=== SISTEM PEMINJAMAN BUKU ===");
         System.out.println("1. Tampilkan Mahasiswa");
@@ -56,7 +58,8 @@ public class Main05 {
         System.out.println("0. Keluar");
         System.out.print("Pilih menu: ");
     }
-    //fungsi untuk menampilkan data mahasiswa
+
+    // fungsi untuk menampilkan data mahasiswa
     static void tampilMahasiswa() {
         System.out.println("\n=== DATA MAHASISHA ===");
         System.out.println("--------------------------------------------------");
@@ -64,68 +67,80 @@ public class Main05 {
         System.out.println("--------------------------------------------------");
 
         for (Mahasiswa05 m : mhs) {
-            System.out.printf("%-10s %-15s %-25s%n", m.nim, m.nama, m.prodi);
+            m.tampil();
         }
 
         System.out.println("--------------------------------------------------");
     }
-    //fungsi untuk menampilkan data buku
+
+    // fungsi untuk menampilkan data buku (Modifikasi untuk menambah grade)
     static void tampilBuku() {
         System.out.println("\n=== DATA BUKU ===");
-        System.out.println("-------------------------------------");
-        System.out.printf("%-10s %-20s %-10s%n", "Kode", "Judul", "Tahun");
-        System.out.println("-------------------------------------");
+        System.out.println("------------------------------------------------");
+        System.out.printf("%-10s %-20s %-10s %-6s%n", "Kode", "Judul", "Tahun", "Grade");
+        System.out.println("------------------------------------------------");
 
         for (Buku05 b : buku) {
-            System.out.printf("%-10s %-20s %-10d%n", b.kodeBuku, b.judul, b.tahunTerbit);
+            b.tampil();
         }
 
-        System.out.println("-------------------------------------");
+        System.out.println("------------------------------------------------");
     }
-    //fungsi untuk menampilkan data peminjaman
+    // fungsi untuk menampilkan data peminjaman (Modifikasi untuk menambah grade dan
+    // merubah denda)
+
     static void tampilPeminjaman() {
         System.out.println("\n=== DATA PEMINJAMAN ===");
-        System.out.println("--------------------------------------------------------------------------------");
-        System.out.printf("%-10s %-15s %-20s %-10s %-12s %-10s%n",
-                "NIM", "Nama", "Judul", "Lama", "Terlambat", "Denda");
-        System.out.println("--------------------------------------------------------------------------------");
+        System.out
+                .println("------------------------------------------------------------------------------------------");
+        System.out.printf("%-10s %-15s %-20s %-8s %-10s %-12s %-10s%n",
+                "NIM", "Nama", "Judul", "Grade", "Lama", "Terlambat", "Denda");
+        System.out
+                .println("------------------------------------------------------------------------------------------");
 
         for (Peminjaman05 p : pinjam) {
-            System.out.printf("%-10s %-15s %-20s %-10d %-12d Rp%,d%n",
-                    p.mhs.nim, p.mhs.nama, p.buku.judul,
+            System.out.printf("%-10s %-15s %-20s %-8s %-10d %-12d Rp%,d%n",
+                    p.mhs.nim, p.mhs.nama, p.buku.judul, p.buku.grade,
                     p.lamaPinjam, p.terlambat, p.denda);
         }
 
-        System.out.println("--------------------------------------------------------------------------------");
+        System.out
+                .println("------------------------------------------------------------------------------------------");
     }
-    //fungsi untuk mengurutkan denda dengan insertion sort
+
+    // fungsi untuk mengurutkan denda (Modifikasi untuk mengurutkan data berdasarkan kriteria)
     static void sortingDenda() {
         for (int i = 1; i < pinjam.length; i++) {
             Peminjaman05 key = pinjam[i];
             int j = i - 1;
 
-            while (j >= 0 && pinjam[j].denda < key.denda) {
+            while (j >= 0 && (pinjam[j].denda < key.denda || (pinjam[j].denda == key.denda && pinjam[j].mhs.nama.compareTo(key.mhs.nama) > 0))) {
                 pinjam[j + 1] = pinjam[j];
                 j--;
             }
+
             pinjam[j + 1] = key;
         }
 
-        System.out.println("\n=== DATA PEMINJAMAN (URUT DENDA TERBESAR) ===");
-        System.out.println("--------------------------------------------------------------------------------");
-        System.out.printf("%-10s %-15s %-20s %-10s %-12s %-10s%n",
-                "NIM", "Nama", "Judul", "Lama", "Terlambat", "Denda");
-        System.out.println("--------------------------------------------------------------------------------");
+        System.out.println("\n=== DATA PEMINJAMAN ===");
+        System.out.println(
+                "--------------------------------------------------------------------------------------------");
+        System.out.printf("%-10s %-15s %-20s %-8s %-10s %-12s %-10s%n",
+                "NIM", "Nama", "Judul", "Grade", "Lama", "Terlambat", "Denda");
+        System.out.println(
+                "--------------------------------------------------------------------------------------------");
 
         for (Peminjaman05 p : pinjam) {
-            System.out.printf("%-10s %-15s %-20s %-10d %-12d Rp%,d%n",
-                    p.mhs.nim, p.mhs.nama, p.buku.judul,
+            System.out.printf("%-10s %-15s %-20s %-8s %-10d %-12d Rp%,d%n",
+                    p.mhs.nim, p.mhs.nama, p.buku.judul, p.buku.grade,
                     p.lamaPinjam, p.terlambat, p.denda);
         }
 
-        System.out.println("--------------------------------------------------------------------------------");
+        System.out.println(
+                "--------------------------------------------------------------------------------------------");
     }
-    //fungsi untuk mencari data mahasiswa menggunakan nim
+
+    // fungsi untuk mencari data mahasiswa menggunakan nim
     static void cariNIM() {
         input.nextLine();
         System.out.print("\nMasukkan NIM: ");

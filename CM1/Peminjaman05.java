@@ -13,16 +13,22 @@ public class Peminjaman05 {
         this.lamaPinjam = lamaPinjam;
         hitungDenda();
     }
-    //fungsi untuk menghitung denda
+    //fungsi untuk menghitung denda (Modifikasi menghitung berdasarkan grade)
     public void hitungDenda() {
-        if (lamaPinjam > 5) {
-            terlambat = lamaPinjam - 5;
-            denda = terlambat * 2000;
+    if (lamaPinjam > 5) {
+        terlambat = lamaPinjam - 5;
+
+        if (buku.grade.equalsIgnoreCase("A")) {
+            denda = terlambat * 5000;
         } else {
-            terlambat = 0;
-            denda = 0;
+            denda = terlambat * 2000;
         }
+
+    } else {
+        terlambat = 0;
+        denda = 0;
     }
+}
     //fungsi untuk menampilkan data peminjaman
     public void tampil() {
         System.out.printf("%-8s %-12s %-18s %-10d%n",
