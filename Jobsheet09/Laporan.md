@@ -31,4 +31,6 @@ Hasil running percobaan 2
 2. Program akan memberi hasil yang sama. Karena nilai selalu dibagi 2 hingga menjadi 0, maka kondisi kode > 0 dan kode != 0 akan berhenti pada titik yang sama (saat kode = 0).
 
 ## Latihan Praktikum
+<img width="261" height="822" alt="image" src="https://github.com/user-attachments/assets/71b75872-332b-4460-8f87-86ee99b24852" />
+<img width="359" height="330" alt="image" src="https://github.com/user-attachments/assets/7c294ee4-aec5-4964-98cd-3c61b66543bb" />
 
