@@ -25,7 +25,7 @@ public class MahasiswaBerprestasi05 {
             for (int j = 1; j < listMhs.length - i; j++) {
                 if (listMhs[j].ipk > listMhs[j - 1].ipk) {
                     Mahasiswa05 tmp = listMhs[j];
-                    listMhs[j]     = listMhs[j - 1];
+                    listMhs[j] = listMhs[j - 1];
                     listMhs[j - 1] = tmp;
                 }
             }
