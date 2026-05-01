@@ -1,7 +1,7 @@
 package P2Jobsheet10;
 
 public class AntrianLayanan {
-    Mahasiswa[] data;
+    Mahasiswa05[] data;
     int front;
     int rear;
     int size;
@@ -9,7 +9,7 @@ public class AntrianLayanan {
 
     public AntrianLayanan(int max){
         this.max = max;
-        this.data = new Mahasiswa[max];
+        this.data = new Mahasiswa05[max];
         this.front=0;
         this.rear= -1;
         this.size=0;
@@ -28,7 +28,7 @@ public class AntrianLayanan {
             return false;
         }
     }
-    public void tambahAntrian(Mahasiswa mhs){
+    public void tambahAntrian(Mahasiswa05 mhs){
         if (IsFull()) {
             System.out.println("Antrian penuh, tidak dapat menambah mahasiswa");
             return;
@@ -38,12 +38,12 @@ public class AntrianLayanan {
         size++;
         System.out.println(mhs.nama+" berhasil masuk ke antrian");
     }
-    public Mahasiswa layaniMahasiswa(){
+    public Mahasiswa05 layaniMahasiswa(){
         if (IsEmpty()) {
             System.out.println("Antrian kosong");
             return null;
         }
-        Mahasiswa mhs = data[front];
+        Mahasiswa05 mhs = data[front];
         size--;
         return mhs;
     }
@@ -72,4 +72,12 @@ public class AntrianLayanan {
     public int getJumlahAntrian(){
         return size;
     }
+    public void lihatBelakang(){
+    if (!IsEmpty()) {
+        System.out.println("Antrian paling belakang:");
+        data[rear].tampilkanData();
+    } else {
+        System.out.println("Antrian kosong");
+    }
+}
 }

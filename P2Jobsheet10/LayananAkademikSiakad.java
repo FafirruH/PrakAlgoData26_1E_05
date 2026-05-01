@@ -13,6 +13,7 @@ public class LayananAkademikSiakad {
             System.out.println("3. Lihat Mahasiswa Terdepan");
             System.out.println("4. Lihat Semua Mahasisaw dalam Antrian");
             System.out.println("5. Jumlah Mahasiswa dalam Antrian");
+            System.out.println("6. Cek Antrian paling belakang");
             System.out.println("0. Keluar");
             System.out.print("Pilih menu: ");
             pilihan = sc.nextInt();
@@ -28,11 +29,11 @@ public class LayananAkademikSiakad {
                     String prodi = sc.nextLine();
                     System.out.print("Kelas   : ");
                     String kelas = sc.nextLine();
-                    Mahasiswa mhs = new Mahasiswa(nim, nama, prodi, kelas);
+                    Mahasiswa05 mhs = new Mahasiswa05(nim, nama, prodi, kelas);
                     antrian.tambahAntrian(mhs);
                     break;
                 case 2:
-                    Mahasiswa dilayani = antrian.layaniMahasiswa();
+                    Mahasiswa05 dilayani = antrian.layaniMahasiswa();
                     if (dilayani != null) {
                         System.out.print("Melayani mahasiswa: ");
                         dilayani.tampilkanData();
@@ -47,6 +48,9 @@ public class LayananAkademikSiakad {
                     break;
                 case 0:
                     System.out.println("Terima kasih");
+                    break;
+                case 6:
+                    antrian.lihatBelakang();
                     break;
                 default:
                     System.out.println("Pilihan tidak valid");
