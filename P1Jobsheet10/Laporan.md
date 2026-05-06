@@ -29,3 +29,10 @@ Hasil running percobaan 2
 <img width="403" height="796" alt="image" src="https://github.com/user-attachments/assets/e3f1d38e-6c30-41e7-96df-ac432de2e725" />
 
 ## Tugas
+<img width="441" height="829" alt="image" src="https://github.com/user-attachments/assets/6b0bc304-c618-44e9-a562-047db3cef3c7" />
+<img width="516" height="959" alt="image" src="https://github.com/user-attachments/assets/9227cb8b-e094-4a1b-a011-879453101377" />
+<img width="477" height="790" alt="image" src="https://github.com/user-attachments/assets/948a1b1d-1df1-4b31-89a9-30096a893863" />
+<img width="434" height="806" alt="image" src="https://github.com/user-attachments/assets/203dc736-af7a-498b-9db1-231d1729b1ae" />
+<img width="459" height="704" alt="image" src="https://github.com/user-attachments/assets/091d2195-b7a9-4263-af84-68fe19f72576" />
+<img width="465" height="634" alt="image" src="https://github.com/user-attachments/assets/092075a5-a830-45a7-8dfa-8e0debb4c9f2" />
+<img width="400" height="603" alt="image" src="https://github.com/user-attachments/assets/895006a1-92fc-4194-8fd8-a9f5e9953f58" />
