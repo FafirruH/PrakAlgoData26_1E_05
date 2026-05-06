@@ -1,13 +1,13 @@
 package P2Jobsheet10;
 
-public class AntrianLayanan {
+public class AntrianLayanan05 {
     Mahasiswa05[] data;
     int front;
     int rear;
     int size;
     int max;
 
-    public AntrianLayanan(int max){
+    public AntrianLayanan05(int max){
         this.max = max;
         this.data = new Mahasiswa05[max];
         this.front=0;
@@ -79,5 +79,5 @@ public class AntrianLayanan {
     } else {
         System.out.println("Antrian kosong");
     }
-}
+    }
 }

@@ -1,10 +1,10 @@
 package P2Jobsheet10;
 import java.util.Scanner;
 
-public class LayananAkademikSiakad {
+public class LayananAkademikSiakad05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        AntrianLayanan antrian = new AntrianLayanan(5);
+        AntrianLayanan05 antrian = new AntrianLayanan05(5);
         int pilihan;
         do{
             System.out.println("\n=== Menu Antrian Layanan Akademik ===");

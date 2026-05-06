@@ -1,7 +1,7 @@
 package P2Jobsheet10;
 
 public class Mahasiswa05 {
-    String nim, nama, prodi, kelas;
+    String nim, nama, prodi, kelas, jurusan;
 
     public Mahasiswa05(String nim, String nama, String prodi, String kelas) {
         this.nim = nim;
