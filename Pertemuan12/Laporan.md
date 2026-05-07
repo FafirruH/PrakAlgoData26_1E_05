@@ -16,3 +16,8 @@ Hasil running percobaan 1
 # Praktikum 2
 ## Percobaan 2
 Hasil running percobaan 2
+<img width="412" height="195" alt="image" src="https://github.com/user-attachments/assets/888401b8-5792-4f8b-8b31-28aa0e074e27" />
+
+## Pertanyaan
+1. Keyword break digunakan untuk menghentikan perulangan setelah data yang dicari berhasil dihapus. Karena pada linked list proses pencarian dilakukan dengan traversal menggunakan looping, jika data sudah ditemukan dan dihapus maka perulangan tidak perlu dilanjutkan lagi.
+2. Untuk memperbarui nilai tail ketika node terakhir dihapus.
