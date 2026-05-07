@@ -1,8 +1,8 @@
 package Pertemuan12;
 
-public class SingleLinkedList00 {
-    Node00 head;
-    Node00 tail;
+public class SingleLinkedList05 {
+    Node05 head;
+    Node05 tail;
 
     boolean isEmpty() {
         return (head == null);
@@ -10,7 +10,7 @@ public class SingleLinkedList00 {
 
     public void print() {
         if (!isEmpty()) {
-            Node00 tmp = head;
+            Node05 tmp = head;
             System.out.println("Isi Linked List : ");
             while (tmp != null) {
                 tmp.data.tampilInformasi();
@@ -22,8 +22,8 @@ public class SingleLinkedList00 {
         }
     }
 
-    public void addFirst(Mahasiswa00 input) {
-        Node00 ndInput = new Node00(input, null);
+    public void addFirst(Mahasiswa05 input) {
+        Node05 ndInput = new Node05(input, null);
         if (isEmpty()) {
             head = ndInput;
             tail = ndInput;
@@ -33,8 +33,8 @@ public class SingleLinkedList00 {
         }
     }
 
-    public void addLast(Mahasiswa00 input) {
-        Node00 ndInput = new Node00(input, null);
+    public void addLast(Mahasiswa05 input) {
+        Node05 ndInput = new Node05(input, null);
         if (isEmpty()) {
             head = ndInput;
             tail = ndInput;
@@ -44,9 +44,9 @@ public class SingleLinkedList00 {
         }
     }
 
-    public void insertAfter(String key, Mahasiswa00 input) {
-        Node00 ndInput = new Node00(input, null);
-        Node00 temp = head;
+    public void insertAfter(String key, Mahasiswa05 input) {
+        Node05 ndInput = new Node05(input, null);
+        Node05 temp = head;
 
         do {
             if (temp.data.nama.equalsIgnoreCase(key)) {
@@ -61,20 +61,21 @@ public class SingleLinkedList00 {
         } while (temp != null);
     }
 
-    public void insertAt(int index, Mahasiswa00 input) {
+    public void insertAt(int index, Mahasiswa05 input) {
         if (index < 0) {
             System.out.println("Index salah");
         } else if (index == 0) {
             addFirst(input);
         } else {
-            Node00 temp = head;
+            Node05 temp = head;
             for (int i = 0; i < index - 1; i++) {
                 temp = temp.next;
             }
-            temp.next = new Node00(input, temp.next);
+            temp.next = new Node05(input, temp.next);
             if (temp.next.next == null) {
                 tail = temp.next;
             }
         }
     }
+    
 }

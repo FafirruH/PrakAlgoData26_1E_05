@@ -1,15 +1,15 @@
 package Pertemuan12;
 
-public class Mahasiswa00 {
+public class Mahasiswa05 {
     String nim;
     String nama;
     String kelas;
     double ipk;
 
-    Mahasiswa00() {
+    Mahasiswa05() {
     }
 
-    Mahasiswa00(String nm, String name, String kls, double ip) {
+    Mahasiswa05(String nm, String name, String kls, double ip) {
         nim = nm;
         nama = name;
         kelas = kls;
