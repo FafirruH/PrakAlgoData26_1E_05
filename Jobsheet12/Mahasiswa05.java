@@ -5,12 +5,14 @@ public class Mahasiswa05 {
     String nama;
     String kelas;
     double ipk;
+    int size;
 
     Mahasiswa05(String nim, String nama, String kelas, double ipk) {
         this.nim = nim;
         this.nama = nama;
         this.kelas = kelas;
         this.ipk = ipk;
+        this.size = 0;
     }
 
     void tampil() {
