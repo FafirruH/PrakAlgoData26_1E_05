@@ -1,5 +1,4 @@
 
-
 public class BinaryTree05 {
     Node05 root;
 
@@ -49,7 +48,7 @@ public class BinaryTree05 {
         return result;
     }
 
-    void traversePreOrder (Node05 node){
+    void traversePreOrder(Node05 node) {
         if (node != null) {
             node.mahasiswa.tampilInformasi();
             traversePreOrder(node.left);
@@ -57,7 +56,7 @@ public class BinaryTree05 {
         }
     }
 
-    void traverseInOrder (Node05 node){
+    void traverseInOrder(Node05 node) {
         if (node != null) {
             traversePreOrder(node.left);
             node.mahasiswa.tampilInformasi();
@@ -65,7 +64,7 @@ public class BinaryTree05 {
         }
     }
 
-    void traversePostOrder (Node05 node){
+    void traversePostOrder(Node05 node) {
         if (node != null) {
             traversePreOrder(node.left);
             traversePreOrder(node.right);
@@ -73,7 +72,7 @@ public class BinaryTree05 {
         }
     }
 
-    Node05 getSuccesssor(Node05 del){
+    Node05 getSuccesssor(Node05 del) {
         Node05 successor = del.right;
         Node05 successorParent = del;
         while (successor.left != null) {
@@ -86,12 +85,13 @@ public class BinaryTree05 {
         }
         return successor;
     }
-    void delete(double ipk){
+
+    void delete(double ipk) {
         if (isEmpty()) {
             System.out.println("Binary tree kosong");
             return;
         }
-        //cari node (current) yang akan dihapus
+        // cari node (current) yang akan dihapus
         Node05 parent = root;
         Node05 current = root;
         boolean isLeftChild = false;
@@ -102,18 +102,18 @@ public class BinaryTree05 {
                 parent = current;
                 current = current.left;
                 isLeftChild = true;
-            }else if(ipk > current.mahasiswa.ipk){
+            } else if (ipk > current.mahasiswa.ipk) {
                 parent = current;
                 current = current.left;
                 isLeftChild = false;
             }
         }
-        //penghapusan
+        // penghapusan
         if (current == null) {
             System.out.println("Data tidak ditemukan");
             return;
-        }else{
-            //jika tidak ada anak (leaf), maka node dihapus
+        } else {
+            // jika tidak ada anak (leaf), maka node dihapus
             if (current.left == null && current.right == null) {
                 if (current == root) {
                     root = null;
@@ -124,31 +124,95 @@ public class BinaryTree05 {
                         parent.right = null;
                     }
                 }
-            }else if (current.left == null) { //jika hanya punya 1 anak (kanan)
+            } else if (current.left == null) { // jika hanya punya 1 anak (kanan)
                 if (current == root) {
                     root = current.right;
-                }else{
+                } else {
                     if (isLeftChild) {
                         parent.left = current.right;
                     } else {
                         parent.right = current.right;
                     }
                 }
-            }else{
+            } else {
                 Node05 successor = getSuccesssor(current);
                 System.out.println("Jika 2 anak, current = ");
                 successor.mahasiswa.tampilInformasi();
                 if (current == root) {
-                    root= successor;
-                }else{
+                    root = successor;
+                } else {
                     if (isLeftChild) {
                         parent.left = successor;
                     } else {
                         parent.right = successor;
                     }
                 }
-            successor.left = current.left;
+                successor.left = current.left;
             }
+        }
+    }
+
+    public void addRekursif(Mahasiswa05 mahasiswa) {
+        root = addRekursifHelper(root, mahasiswa);
+    }
+
+    private Node05 addRekursifHelper(Node05 current, Mahasiswa05 mahasiswa) {
+        if (current == null) {
+            return new Node05(mahasiswa);
+        }
+        if (mahasiswa.ipk < current.mahasiswa.ipk) {
+            current.left = addRekursifHelper(current.left, mahasiswa);
+        } else {
+            current.right = addRekursifHelper(current.right, mahasiswa);
+        }
+
+        return current;
+    }
+
+    public void cariMinIPK() {
+        if (isEmpty()) {
+            System.out.println("Tree masih kosong");
+            return;
+        }
+        // Terus gerak ke kiri sampai tidak ada anak kiri lagi
+        Node05 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        System.out.println("Mahasiswa dengan IPK terkecil:");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    public void cariMaxIPK() {
+        if (isEmpty()) {
+            System.out.println("Tree masih kosong");
+            return;
+        }
+        // Terus gerak ke kanan sampai tidak ada anak kanan lagi
+        Node05 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        System.out.println("Mahasiswa dengan IPK terbesar:");
+        current.mahasiswa.tampilInformasi();
+    }
+
+    public void tampilMahasiswaIPKdiAtas(double ipkBatas) {
+        if (isEmpty()) {
+            System.out.println("Tree masih kosong");
+            return;
+        }
+        System.out.println("Mahasiswa dengan IPK di atas " + ipkBatas + ":");
+        tampilIPKdiAtasHelper(root, ipkBatas);
+    }
+
+    private void tampilIPKdiAtasHelper(Node05 node, double ipkBatas) {
+        if (node != null) {
+            tampilIPKdiAtasHelper(node.left, ipkBatas);
+            if (node.mahasiswa.ipk > ipkBatas) {
+                node.mahasiswa.tampilInformasi();
+            }
+            tampilIPKdiAtasHelper(node.right, ipkBatas);
         }
     }
 }
