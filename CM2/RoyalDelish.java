@@ -7,12 +7,14 @@ class NodePembeli {
     Pembeli data;
     NodePembeli prev;
     NodePembeli next;
+    int jamAntrian;
 
-    NodePembeli(NodePembeli prev, int nomorAntrian, Pembeli data, NodePembeli next) {
+    NodePembeli(NodePembeli prev, int nomorAntrian, Pembeli data, NodePembeli next, int jamAntri) {
         this.prev = prev;
         this.nomorAntrian = nomorAntrian;
         this.data = data;
         this.next = next;
+        this.jamAntrian = jamAntri;
     }
 }
 
@@ -30,6 +32,21 @@ class NodePesanan {
     }
 }
 
+// node baru
+class NodeRekap {
+    int jamAntrian;
+    int jumlah;
+    NodeRekap prev;
+    NodeRekap next;
+
+    NodeRekap(NodeRekap prev, int jamAntri, int jumlah, NodeRekap next) {
+        this.prev = prev;
+        this.jamAntrian = jamAntri;
+        this.jumlah = jumlah;
+        this.next = next;
+    }
+}
+
 class DoubleLinkedListPembeli {
     NodePembeli head;
     NodePembeli tail;
@@ -39,8 +56,8 @@ class DoubleLinkedListPembeli {
         return head == null;
     }
 
-    void tambahAntrian(Pembeli data) {
-        NodePembeli newNode = new NodePembeli(null, nomor++, data, null);
+    void tambahAntrian(Pembeli data, int jamAntrian) {
+        NodePembeli newNode = new NodePembeli(null, nomor++, data, null, jamAntrian);
 
         if (isEmpty()) {
             head = tail = newNode;
@@ -53,6 +70,7 @@ class DoubleLinkedListPembeli {
         System.out.println("Antrian berhasil ditambahkan");
     }
 
+    // menabahkan output jam antrian
     void cetakAntrian() {
         if (isEmpty()) {
             System.out.println("Antrian kosong");
@@ -66,9 +84,10 @@ class DoubleLinkedListPembeli {
         System.out.println("===================================");
 
         while (current != null) {
-            System.out.println("No Antrian : " + current.nomorAntrian);
-            System.out.println("Nama       : " + current.data.namaPembeli);
-            System.out.println("No HP      : " + current.data.noHp);
+            System.out.println("No Antrian  : " + current.nomorAntrian);
+            System.out.println("Nama        : " + current.data.namaPembeli);
+            System.out.println("No HP       : " + current.data.noHp);
+            System.out.println("Jam Antrian : " + current.jamAntrian);
             System.out.println("-----------------------------------");
             current = current.next;
         }
@@ -143,7 +162,7 @@ class DoubleLinkedListPesanan {
         } while (tukar);
     }
 
-    void laporanPesanan() {
+    void layaniPesanan() {
         if (isEmpty()) {
             System.out.println("Belum ada pesanan");
             return;
@@ -173,12 +192,13 @@ class DoubleLinkedListPesanan {
     }
 }
 
-public class MainRoyalDelish {
+public class RoyalDelish {
     public static void main(String[] args) {
         Scanner paps = new Scanner(System.in);
 
         DoubleLinkedListPembeli antrian = new DoubleLinkedListPembeli();
         DoubleLinkedListPesanan daftarPesanan = new DoubleLinkedListPesanan();
+        LinkedListRekapAntrian rekap = new LinkedListRekapAntrian();
 
         int pilih;
 
@@ -188,14 +208,16 @@ public class MainRoyalDelish {
             System.out.println("===================================");
             System.out.println("1. Tambah Antrian");
             System.out.println("2. Cetak Antrian");
-            System.out.println("3. Hapus Antrian");
+            System.out.println("3. Layani Antrian");
             System.out.println("4. Laporan Pesanan");
-            System.out.println("5. Keluar");
+            System.out.println("5. Rekap Jam Antrian Terbanyak");
+            System.out.println("0. Keluar");
             System.out.print("Pilih menu : ");
             pilih = paps.nextInt();
             paps.nextLine();
 
             switch (pilih) {
+                // tambahan input jam antrian
                 case 1:
                     System.out.print("Nama Pembeli : ");
                     String nama = paps.nextLine();
@@ -203,8 +225,14 @@ public class MainRoyalDelish {
                     System.out.print("No HP : ");
                     String hp = paps.nextLine();
 
+                    System.out.print("Jam Antrian : ");
+                    int jam = paps.nextInt();
+                    paps.nextLine();
+
                     Pembeli pembeli = new Pembeli(nama, hp);
-                    antrian.tambahAntrian(pembeli);
+                    antrian.tambahAntrian(pembeli, jam);
+
+                    rekap.tambahRekap(jam);
                     break;
 
                 case 2:
@@ -239,10 +267,14 @@ public class MainRoyalDelish {
                     break;
 
                 case 4:
-                    daftarPesanan.laporanPesanan();
+                    daftarPesanan.layaniPesanan();
+                    break;
+                // method tampil rekap terbanyak
+                case 5:
+                    rekap.tampilRekapTerbanyak();
                     break;
 
-                case 5:
+                case 0:
                     System.out.println("Program selesai");
                     break;
 
@@ -250,7 +282,7 @@ public class MainRoyalDelish {
                     System.out.println("Menu tidak valid");
             }
 
-        } while (pilih != 5);
+        } while (pilih != 0);
         paps.close();
     }
 }
